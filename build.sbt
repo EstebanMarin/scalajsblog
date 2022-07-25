@@ -23,6 +23,16 @@ lazy val `blog` =
     .settings(commonSettings)
     .settings(dependencies)
 
+lazy val `frontend` =
+  project
+    .in(file("frontend"))
+    .enablePlugins(ScalaJSPlugin)
+    .settings(name := "frontend")
+    .settings(commonSettings)
+    .settings(dependencies)
+    .settings(scalaJSUseMainModuleInitializer := true)
+
+
 lazy val commonSettings = commonScalacOptions ++ Seq(
   update / evictionWarningOptions := EvictionWarningOptions.empty
 )
@@ -39,6 +49,7 @@ lazy val commonScalacOptions = Seq(
 lazy val dependencies = Seq(
   libraryDependencies ++= Seq(
     // main dependencies
+    org.typelevel.cats
   ),
   libraryDependencies ++= Seq(
     org.scalatest.scalatest,
