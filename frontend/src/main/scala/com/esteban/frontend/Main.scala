@@ -4,10 +4,14 @@ package com.esteban.frontend
 import com.raquo.laminar.api.L.*
 import org.scalajs.dom
 
+import io.laminext.syntax.tailwind.*
+//https://nerdcave.com/tailwind-cheat-sheet
+
 val nameVar = Var("")
 def TextInput(): Input = input(typ("text"))
 val inputElement =
   div(
+    cls("bg-black test-class"),
     "Please enter your name",
     TextInput().amendThis(thisNode => List(onInput.mapTo(thisNode.ref.value) --> nameVar)),
     span(
@@ -23,6 +27,7 @@ def Counter(label: String, initialStep: Int): HtmlElement =
   val $count = diffBus.events.foldLeft(initial = 0)(_ + _)
   div(
     p(
+      cls := "w-24 h-24",
       "Step: ",
       select(
         value <-- stepVar.signal.map(_.toString),

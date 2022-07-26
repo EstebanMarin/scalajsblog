@@ -8,5 +8,6 @@
 .scala-build/
 .scala/
 .vscode/
+node_modules/
 metals.sbt
 target/
