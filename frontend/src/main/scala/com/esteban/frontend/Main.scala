@@ -41,7 +41,7 @@ def Counter(label: String, initialStep: Int): HtmlElement =
       " ",
       // Two different ways to get stepVar's value:
       button(
-        cls("bg-sky-600 hover:bg-sky-700"),
+        cls("btn btn-primary"),
         "–",
         onClick.mapTo(-1 * stepVar.now()) --> diffBus,
       ),
