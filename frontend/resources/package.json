@@ -10,7 +10,7 @@
     "tailwindcss": "^3.1.6"
   },
   "scripts": {
-    "tail": "npx tailwindcss -i ./src/input.css -o ./dist/output.css"
+    "tail": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "dependencies": {
     "daisyui": "^2.20.0"
