@@ -10,10 +10,13 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require("@tailwindcss/typography"), 
+    require("daisyui")],
   daisyui: {
     styled: true,
-    themes: true,
+    themes: ["light", "dark", "corporate", "forest", "wireframe", "black", "luxury", "dracula", "business", "acid", "lemonade", "night", "coffee", "winter"],
     base: true,
     utils: true,
     logs: true,

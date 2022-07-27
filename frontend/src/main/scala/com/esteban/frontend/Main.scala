@@ -8,13 +8,15 @@ import io.laminext.syntax.tailwind.*
 
 val nameVar = Var("")
 def TextInput(): Input = input(typ("text"))
+
 val inputElement =
   div(
-    cls("bg-black text-4xl"),
+    // cls("bg-black text-4xl"),
     "Please enter your name",
     TextInput().amendThis(thisNode => List(onInput.mapTo(thisNode.ref.value) --> nameVar)),
     span(
-      cls("lg"),
+      // cls("lg"),
+      dataAttr("theme")("business"),
       "Hello, ",
       child.text <-- nameVar.signal.map(identity),
     ),
@@ -27,7 +29,8 @@ def Counter(label: String, initialStep: Int): HtmlElement =
   val $count = diffBus.events.foldLeft(initial = 0)(_ + _)
   div(
     p(
-      cls("bg-yellow-900"),
+      // cls("bg-yellow-900"),
+      dataAttr("theme")("business"),
       "Step: ",
       select(
         value <-- stepVar.signal.map(_.toString),
@@ -41,6 +44,7 @@ def Counter(label: String, initialStep: Int): HtmlElement =
       " ",
       // Two different ways to get stepVar's value:
       button(
+        dataAttr("theme")("business"),
         cls("btn btn-primary"),
         "–",
         onClick.mapTo(-1 * stepVar.now()) --> diffBus,
@@ -53,6 +57,7 @@ def Counter(label: String, initialStep: Int): HtmlElement =
   )
 
 val root = div(
+  dataAttr("theme")("light"),
   className := "Name Input",
   placeholder := "Enter name here",
   inputElement,
