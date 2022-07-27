@@ -8,11 +8,15 @@ module.exports = {
     "../target/scala-3.1.3/frontend-fastopt/main.js"
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+    },
     extend: {},
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
-    require("@tailwindcss/typography"), 
+    require("@tailwindcss/typography"),
     require("daisyui")],
   daisyui: {
     styled: true,
