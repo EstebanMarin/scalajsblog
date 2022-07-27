@@ -1,20 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+
+const scalaversion = require('./scala-version')
+
 module.exports = {
-  content: ["./**/*.{html}"],
+  content: [
+    "./dist/index-dev.html",
+    `./target/scala-${scalaversion}'/frontend-fastopt.js`
+  ],
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
-  daisyui: {
-    styled: true,
-    themes: true,
-    base: true,
-    utils: true,
-    logs: true,
-    rtl: false,
-    prefix: "",
-    darkTheme: "dark",
-  },
+  plugins: [],
 }
 // https://tailwindcss.com/docs/installation
 // https://daisyui.com/docs/config/

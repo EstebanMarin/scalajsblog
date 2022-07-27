@@ -10,7 +10,7 @@ val nameVar = Var("")
 def TextInput(): Input = input(typ("text"))
 val inputElement =
   div(
-    cls("sm bg-black test-class"),
+    cls("text-3xl font-bold underline"),
     "Please enter your name",
     TextInput().amendThis(thisNode => List(onInput.mapTo(thisNode.ref.value) --> nameVar)),
     span(
@@ -27,7 +27,7 @@ def Counter(label: String, initialStep: Int): HtmlElement =
   val $count = diffBus.events.foldLeft(initial = 0)(_ + _)
   div(
     p(
-      cls := "bg-red",
+      cls := "text-3xl font-bold underline",
       "Step: ",
       select(
         value <-- stepVar.signal.map(_.toString),
